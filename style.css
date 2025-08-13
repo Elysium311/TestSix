@@ -18,6 +18,9 @@ body {
 .left-panel {
   width: 300px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* выравниваем все элементы по левому краю */
 }
 
 /* Правая панель: результат */
