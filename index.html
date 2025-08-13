@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Email Checker</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
   <div class="container">
-    <!-- Левая колонка: форма -->
     <div class="left-panel">
       <h1>Введите ваш email</h1>
       <input type="email" id="emailInput" placeholder="example@example.com">
       <button onclick="checkEmail()">Проверить</button>
     </div>
-
-    <!-- Правая колонка: результат -->
     <div class="right-panel">
       <div id="result"></div>
     </div>
@@ -23,7 +13,6 @@
   <script>
     let emails = [];
 
-    // Загружаем JSON с email
     fetch('emails.json')
       .then(response => response.json())
       .then(data => emails = data)
@@ -48,4 +37,3 @@
     }
   </script>
 </body>
-</html>
