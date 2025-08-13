@@ -1,63 +1,59 @@
 /* Основной стиль страницы */
 body {
-  margin: 0;
+  background-color: #2e2e2e;  /* тёмно-серый фон */
+  color: #f0f0f0;             /* светлый текст */
   font-family: Arial, sans-serif;
-  background-color: #2e2e2e;
-  color: #f0f0f0;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-/* Контейнер для левой и правой панели */
+/* Контейнер: две колонки */
 .container {
   display: flex;
   flex-direction: row;
-  height: 100vh;  /* вся высота окна */
+  height: 100vh;
 }
 
-/* Левая панель: надпись и форма */
+/* Левая панель: форма */
 .left-panel {
   width: 300px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* выравнивание сверху */
-  align-items: flex-start;     /* выравнивание слева */
-  box-sizing: border-box;
+  align-items: flex-start; /* выравниваем все элементы по левому краю */
 }
 
-/* Правая панель: картинка */
+/* Правая панель: результат */
 .right-panel {
-  flex: 1; /* занимает оставшееся место */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* картинка не выходит за пределы */
+  padding: 20px;
 }
 
 /* Стиль изображения */
 #result img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* сохраняет пропорции */
+  width: 90%;
+  height: 90%;
+  object-fit: contain; /* масштабирование по ширине и высоте */
 }
 
 /* Сообщения об ошибках */
 #result p {
   color: #ff4d4d;
   font-weight: bold;
+  text-align: center;
 }
 
 /* Поля ввода и кнопки */
 input, button {
   padding: 10px;
   font-size: 16px;
-  margin: 5px 0;
+  margin-top: 10px;
+  width: 100%;
   border: none;
   border-radius: 5px;
-}
-
-input {
-  width: 100%;
 }
 
 button {
