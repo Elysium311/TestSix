@@ -2,28 +2,43 @@
 body {
   background-color: #2e2e2e;  /* тёмно-серый фон */
   color: #f0f0f0;             /* светлый текст */
-  text-align: center;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
-  min-height: 100vh;
+  padding: 0;
+}
+
+/* Контейнер: две колонки */
+.container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Левая панель: форма */
+.left-panel {
+  width: 300px;
+  padding: 20px;
+}
+
+/* Правая панель: результат */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 /* Стиль изображения */
 #result img {
-  width: 90vw;        /* ширина 90% от окна */
-  height: 90vh;       /* высота 90% от окна */
-  object-fit: contain; /* масштабируем изображение по ширине и высоте, сохраняя пропорции */
-  margin-top: 20px;
-  display: block;
+  width: 90%;
+  height: 90%;
+  object-fit: contain; /* масштабирование по ширине и высоте */
 }
 
 /* Сообщения об ошибках */
 #result p {
-  color: #ff4d4d;     /* красный цвет */
+  color: #ff4d4d;
   font-weight: bold;
   text-align: center;
 }
@@ -32,13 +47,10 @@ body {
 input, button {
   padding: 10px;
   font-size: 16px;
-  margin: 10px;
+  margin-top: 10px;
+  width: 100%;
   border: none;
   border-radius: 5px;
-}
-
-input {
-  width: 250px;
 }
 
 button {
