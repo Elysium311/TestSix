@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Checker</title>
+</head>
+<body>
+  <h1>Введите ваш email</h1>
+  <input type="email" id="emailInput" placeholder="example@example.com">
+  <button onclick="checkEmail()">Проверить</button>
+
+  <div id="result" style="margin-top:20px;"></div>
+
+  <script>
+    let emails = [];
+
+    // Загружаем JSON с email
+    fetch('emails.json')
+      .then(response => response.json())
+      .then(data => emails = data)
+      .catch(err => console.error('Ошибка загрузки email:', err));
+
+    function checkEmail() {
+      const input = document.getElementById('emailInput').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if (emails.includes(input)) {
+        // Заменяем запрещенные символы для имени файла
+        const filename = input.replace(/[@.]/g, '_') + '.png';
+        resultDiv.innerHTML = `<img src="images/${filename}" alt="Email Image" width="300">`;
+      } else {
+        resultDiv.innerHTML = `<p>Email не найден.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
