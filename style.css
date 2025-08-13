@@ -1,29 +1,20 @@
-/* Основной стиль страницы */
 body {
-  background-color: #2e2e2e;  /* тёмно-серый фон */
-  color: #f0f0f0;             /* светлый текст */
+  background-color: #2e2e2e;
+  color: #f0f0f0;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
 }
 
-/* Контейнер: две колонки */
 .container {
   display: flex;
-  flex-direction: row;
   height: 100vh;
 }
 
-/* Левая панель: форма */
 .left-panel {
   width: 300px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* выравниваем все элементы по левому краю */
 }
 
-/* Правая панель: результат */
 .right-panel {
   flex: 1;
   display: flex;
@@ -32,21 +23,18 @@ body {
   padding: 20px;
 }
 
-/* Стиль изображения */
 #result img {
-  width: 90%;
-  height: 90%;
-  object-fit: contain; /* масштабирование по ширине и высоте */
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
-/* Сообщения об ошибках */
 #result p {
   color: #ff4d4d;
   font-weight: bold;
   text-align: center;
 }
 
-/* Поля ввода и кнопки */
 input, button {
   padding: 10px;
   font-size: 16px;
@@ -60,7 +48,6 @@ button {
   background-color: #4a4a4a;
   color: #f0f0f0;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 button:hover {
